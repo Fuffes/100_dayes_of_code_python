@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "16-day-start"
+version = "0.1.0"
+description = ""
+authors = ["Fuffes <Fuffes05@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+prettytable = "^3.9.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
