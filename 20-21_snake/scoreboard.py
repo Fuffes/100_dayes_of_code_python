@@ -6,13 +6,17 @@ class Score(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.high_score = 0
         self.ht()
         self.penup()
+        self.high_score = self.get_high_score()
         self.goto(0, 280)
         self.speed("fastest")
         self.color("white")
         self.print_score()
+
+    def get_high_score(self):
+        with open("high_score.txt", mode="r") as f:
+            return int(f.read())
 
     def print_score(self):
         self.clear()
@@ -27,8 +31,10 @@ class Score(Turtle):
     #     self.write(f'GAME OVER', align=ALIGMENT, font=FONT)
 
     def reset_game(self):
-        if self.score > self.high_score:
-            self.high_score = self.score
+        if (self.score > self.high_score):
+            with open("high_score.txt", mode="w+") as file:
+                file.write(f"{self.score}")
+
 
         self.score = 0
         self.print_score()
