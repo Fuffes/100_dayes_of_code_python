@@ -9,6 +9,14 @@ parsed_data = {row.letter:row.code for (index, row) in data.iterrows()}
 
 #TODO 2. Create a list of the phonetic code words from a word that the user inputs.
 
-input = input("Enter the word ").upper()
-result = [parsed_data[letter] for letter in input]
-print(result)
+def gen_phonetic():
+    input = input("Enter the word ").upper()
+    try:
+        result = [parsed_data[letter] for letter in input]
+    except KeyError:
+        print("Sorry, only letters in the alphabet please." )
+        gen_phonetic()
+    else:
+        print(result)
+
+gen_phonetic()
