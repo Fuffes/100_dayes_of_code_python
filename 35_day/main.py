@@ -1,7 +1,9 @@
+import os
+
 import requests
 from twilio_sender import send_alert
 
-api_key = "829d2128b9f5e40eb86724074f95c6c5"
+api_key = os.getenv("API_KEY")
 
 LAT = "52.23"
 LON = "21.00"
