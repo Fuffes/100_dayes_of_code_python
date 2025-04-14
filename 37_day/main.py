@@ -1,8 +1,14 @@
+import os
+
 import requests
 from datetime import datetime
 
-USERNAME = "fuffes"
-TOKEN = "FuffesAPI"
+from dotenv import load_dotenv
+
+load_dotenv()
+USERNAME = os.getenv("USERNAME")
+TOKEN = os.getenv("TOKEN")
+
 BASE_URL = "https://pixe.la/v1"
 GRAPH_ID = "g1"
 today = datetime.now().strftime("%Y%m%d")
