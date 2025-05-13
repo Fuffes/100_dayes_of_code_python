@@ -38,11 +38,10 @@ while True:
     cookie.click()
 
     if time.time() > timeout:
-        time.sleep(3)
-        # upgrade()
+        upgrade()
         timeout = time.time() + 5
-    #
-    # if time.time() > end:
-    #     get_cps()
-    #     driver.quit()
-    #     break
+
+    if time.time() > end:
+        get_cps()
+        driver.quit()
+        break
